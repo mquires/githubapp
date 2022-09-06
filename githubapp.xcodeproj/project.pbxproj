@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		192CF9D828C747330080349B /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CF9D728C747330080349B /* UIColor + ext.swift */; };
+		192CF9DA28C7474F0080349B /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CF9D928C7474F0080349B /* Resources.swift */; };
+		192CF9DD28C7521A0080349B /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CF9DC28C7521A0080349B /* ApiManager.swift */; };
+		192CF9E128C75C500080349B /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CF9E028C75C500080349B /* Repositories.swift */; };
 		19D3A2D728C73ECB001E0F77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D3A2D628C73ECB001E0F77 /* AppDelegate.swift */; };
 		19D3A2D928C73ECB001E0F77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D3A2D828C73ECB001E0F77 /* SceneDelegate.swift */; };
-		19D3A2DB28C73ECB001E0F77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D3A2DA28C73ECB001E0F77 /* ViewController.swift */; };
-		19D3A2DE28C73ECB001E0F77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D3A2DC28C73ECB001E0F77 /* Main.storyboard */; };
+		19D3A2DB28C73ECB001E0F77 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D3A2DA28C73ECB001E0F77 /* BaseController.swift */; };
 		19D3A2E028C73ECC001E0F77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D3A2DF28C73ECC001E0F77 /* Assets.xcassets */; };
 		19D3A2E328C73ECC001E0F77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D3A2E128C73ECC001E0F77 /* LaunchScreen.storyboard */; };
+		19D3A2EF28C7417C001E0F77 /* GithubListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D3A2EE28C7417C001E0F77 /* GithubListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		192CF9D728C747330080349B /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
+		192CF9D928C7474F0080349B /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		192CF9DC28C7521A0080349B /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		192CF9E028C75C500080349B /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		19D3A2D328C73ECB001E0F77 /* githubapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D3A2D628C73ECB001E0F77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19D3A2D828C73ECB001E0F77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		19D3A2DA28C73ECB001E0F77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		19D3A2DD28C73ECB001E0F77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		19D3A2DA28C73ECB001E0F77 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		19D3A2DF28C73ECC001E0F77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19D3A2E228C73ECC001E0F77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19D3A2E428C73ECC001E0F77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19D3A2EE28C7417C001E0F77 /* GithubListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		192CF9D528C746F00080349B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				192CF9D628C7471B0080349B /* Extensions */,
+				192CF9D928C7474F0080349B /* Resources.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		192CF9D628C7471B0080349B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				192CF9D728C747330080349B /* UIColor + ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		192CF9DB28C752030080349B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				192CF9DC28C7521A0080349B /* ApiManager.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		192CF9E228C75F060080349B /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				192CF9E828C77E0B0080349B /* Base */,
+				192CF9E328C77D060080349B /* GithubList */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		192CF9E328C77D060080349B /* GithubList */ = {
+			isa = PBXGroup;
+			children = (
+				192CF9E628C77D2E0080349B /* Controllers */,
+				192CF9E528C77D280080349B /* Views */,
+				192CF9E428C77D110080349B /* Models */,
+			);
+			path = GithubList;
+			sourceTree = "<group>";
+		};
+		192CF9E428C77D110080349B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				192CF9E028C75C500080349B /* Repositories.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		192CF9E528C77D280080349B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		192CF9E628C77D2E0080349B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				19D3A2EE28C7417C001E0F77 /* GithubListController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		192CF9E828C77E0B0080349B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				192CF9E928C77E1B0080349B /* Views */,
+				19D3A2ED28C73FF7001E0F77 /* Controllers */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		192CF9E928C77E1B0080349B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		19D3A2CA28C73ECB001E0F77 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +147,40 @@
 		19D3A2D528C73ECB001E0F77 /* githubapp */ = {
 			isa = PBXGroup;
 			children = (
+				192CF9DB28C752030080349B /* Api */,
+				19D3A2EB28C73FA8001E0F77 /* Application */,
+				192CF9E228C75F060080349B /* Flow */,
+				192CF9D528C746F00080349B /* Helpers */,
+				19D3A2EC28C73FC2001E0F77 /* SupportingFiles */,
+			);
+			path = githubapp;
+			sourceTree = "<group>";
+		};
+		19D3A2EB28C73FA8001E0F77 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				19D3A2D628C73ECB001E0F77 /* AppDelegate.swift */,
 				19D3A2D828C73ECB001E0F77 /* SceneDelegate.swift */,
-				19D3A2DA28C73ECB001E0F77 /* ViewController.swift */,
-				19D3A2DC28C73ECB001E0F77 /* Main.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		19D3A2EC28C73FC2001E0F77 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				19D3A2DF28C73ECC001E0F77 /* Assets.xcassets */,
 				19D3A2E128C73ECC001E0F77 /* LaunchScreen.storyboard */,
 				19D3A2E428C73ECC001E0F77 /* Info.plist */,
 			);
-			path = githubapp;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		19D3A2ED28C73FF7001E0F77 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				19D3A2DA28C73ECB001E0F77 /* BaseController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +243,6 @@
 			files = (
 				19D3A2E328C73ECC001E0F77 /* LaunchScreen.storyboard in Resources */,
 				19D3A2E028C73ECC001E0F77 /* Assets.xcassets in Resources */,
-				19D3A2DE28C73ECB001E0F77 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19D3A2DB28C73ECB001E0F77 /* ViewController.swift in Sources */,
+				19D3A2EF28C7417C001E0F77 /* GithubListController.swift in Sources */,
+				19D3A2DB28C73ECB001E0F77 /* BaseController.swift in Sources */,
 				19D3A2D728C73ECB001E0F77 /* AppDelegate.swift in Sources */,
+				192CF9DD28C7521A0080349B /* ApiManager.swift in Sources */,
+				192CF9DA28C7474F0080349B /* Resources.swift in Sources */,
+				192CF9E128C75C500080349B /* Repositories.swift in Sources */,
+				192CF9D828C747330080349B /* UIColor + ext.swift in Sources */,
 				19D3A2D928C73ECB001E0F77 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +267,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		19D3A2DC28C73ECB001E0F77 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				19D3A2DD28C73ECB001E0F77 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		19D3A2E128C73ECC001E0F77 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,10 +401,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4JJ4L62956;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = githubapp/Info.plist;
+				INFOPLIST_FILE = githubapp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -304,7 +416,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,10 +429,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4JJ4L62956;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = githubapp/Info.plist;
+				INFOPLIST_FILE = githubapp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,7 +444,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
