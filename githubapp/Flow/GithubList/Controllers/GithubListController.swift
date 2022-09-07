@@ -8,12 +8,13 @@
 import UIKit
 
 class GithubListController: BaseController {
-    private let tableView: UITableView = .init()
+    private let tableView: UITableView = .init(frame: .zero, style: .insetGrouped)
     
     var repositoriesList: [Repository] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupTableView()
         
         ApiManager.shared.getRepositories { result in
@@ -46,11 +47,13 @@ class GithubListController: BaseController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+        
+        tableView.backgroundColor = Resources.Colors.background
     }
 }
 
@@ -71,5 +74,11 @@ extension GithubListController: UITableViewDataSource {
 }
 
 extension GithubListController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rootViewController = RepositoryDetailsController()
+        let navigationViewController = UINavigationController(rootViewController: rootViewController)
+        navigationViewController.modalPresentationStyle = .fullScreen
+
+        present(navigationViewController, animated: true)
+    }
 }

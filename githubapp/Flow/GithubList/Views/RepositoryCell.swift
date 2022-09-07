@@ -32,20 +32,20 @@ class RepositoryCell: UITableViewCell {
     
     func layoutViews() {
         NSLayoutConstraint.activate([
-            avatar.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            avatar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            avatar.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            avatar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             avatar.widthAnchor.constraint(equalToConstant: 32),
             avatar.heightAnchor.constraint(equalToConstant: 32),
             
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             nameLabel.leadingAnchor.constraint(equalTo: avatar.trailingAnchor, constant: 8),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            nameLabel.heightAnchor.constraint(equalToConstant: 32),
+            nameLabel.heightAnchor.constraint(equalToConstant: 16),
             
             repositoryDescriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
             repositoryDescriptionLabel.leadingAnchor.constraint(equalTo: avatar.trailingAnchor, constant: 8),
             repositoryDescriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            repositoryDescriptionLabel.heightAnchor.constraint(equalToConstant: 32),
+            repositoryDescriptionLabel.heightAnchor.constraint(equalToConstant: 16),
         ])
     }
     
