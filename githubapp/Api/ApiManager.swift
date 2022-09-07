@@ -37,13 +37,22 @@ enum ApiType {
 class ApiManager {
     static let shared = ApiManager()
     
-    func getRepositories(completion: @escaping (([Repository]) -> Void)) {
+    func getRepositories(completion: @escaping ((Result<[Repository], Error>) -> Void)) {
         let request = ApiType.getRepositories.request
-        let task = URLSession.shared.dataTask(with: request) {data, response, error in
-            if let data = data, let repositories = try? JSONDecoder().decode([Repository].self, from: data) {
-                completion(repositories)
-            } else {
-                completion([])
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let status = response as? HTTPURLResponse {
+                print("status code: \(status.statusCode)")
+            }
+            
+            if let data = data {
+                do {
+                    let repositories = try JSONDecoder().decode([Repository].self, from: data)
+                    
+                    completion(.success(repositories))
+                } catch {
+                    print(error.localizedDescription)
+                    completion(.failure(error))
+                }
             }
         }
         

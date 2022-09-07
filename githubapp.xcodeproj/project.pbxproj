@@ -11,6 +11,7 @@
 		192CF9DA28C7474F0080349B /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CF9D928C7474F0080349B /* Resources.swift */; };
 		192CF9DD28C7521A0080349B /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CF9DC28C7521A0080349B /* ApiManager.swift */; };
 		192CF9E128C75C500080349B /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CF9E028C75C500080349B /* Repositories.swift */; };
+		192CF9EB28C7A6D90080349B /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CF9EA28C7A6D90080349B /* RepositoryCell.swift */; };
 		19D3A2D728C73ECB001E0F77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D3A2D628C73ECB001E0F77 /* AppDelegate.swift */; };
 		19D3A2D928C73ECB001E0F77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D3A2D828C73ECB001E0F77 /* SceneDelegate.swift */; };
 		19D3A2DB28C73ECB001E0F77 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D3A2DA28C73ECB001E0F77 /* BaseController.swift */; };
@@ -24,6 +25,7 @@
 		192CF9D928C7474F0080349B /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		192CF9DC28C7521A0080349B /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		192CF9E028C75C500080349B /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		192CF9EA28C7A6D90080349B /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		19D3A2D328C73ECB001E0F77 /* githubapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D3A2D628C73ECB001E0F77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19D3A2D828C73ECB001E0F77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		192CF9E528C77D280080349B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				192CF9EA28C7A6D90080349B /* RepositoryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192CF9EB28C7A6D90080349B /* RepositoryCell.swift in Sources */,
 				19D3A2EF28C7417C001E0F77 /* GithubListController.swift in Sources */,
 				19D3A2DB28C73ECB001E0F77 /* BaseController.swift in Sources */,
 				19D3A2D728C73ECB001E0F77 /* AppDelegate.swift in Sources */,
