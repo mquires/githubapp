@@ -9,7 +9,7 @@ import Foundation
 
 enum ApiType {
     case getRepositories
-    case getRepositoryDetails(id: String)
+    case getRepositoryDetails(id: Int)
     
     var baseURL: String {
         return "https://api.github.com/"
@@ -66,7 +66,7 @@ class ApiManager {
         task.resume()
     }
 
-    func getRepositoryDetails(id: String, completion: @escaping ((Result<RepositoryDetails, Error>) -> Void)) {
+    func getRepositoryDetails(id: Int, completion: @escaping ((Result<RepositoryDetails, Error>) -> Void)) {
         let request = ApiType.getRepositoryDetails(id: id).request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let status = response as? HTTPURLResponse {

@@ -8,6 +8,8 @@
 import UIKit
 
 class RepositoryDetailsController: BaseController {
+    private let selectedId: Int
+
     var repositoryDetails: RepositoryDetails!
     
     private let avatarImage = UIImageView()
@@ -20,7 +22,7 @@ class RepositoryDetailsController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ApiManager.shared.getRepositoryDetails(id: "1") { result in
+        ApiManager.shared.getRepositoryDetails(id: selectedId) { result in
             switch result {
             case .success(let repositoryDetails):
                 DispatchQueue.main.async {
@@ -33,6 +35,16 @@ class RepositoryDetailsController: BaseController {
         }
         
         configureSwipe()
+    }
+    
+    init(selectedId: Int) {
+        self.selectedId = selectedId
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func addViews() {

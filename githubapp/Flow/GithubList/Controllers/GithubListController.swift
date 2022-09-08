@@ -54,6 +54,7 @@ class GithubListController: BaseController {
         ])
         
         tableView.backgroundColor = Resources.Colors.background
+        tableView.rowHeight = 48
     }
 }
 
@@ -75,7 +76,7 @@ extension GithubListController: UITableViewDataSource {
 
 extension GithubListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let rootViewController = RepositoryDetailsController()
+        let rootViewController = RepositoryDetailsController(selectedId: repositoriesList[indexPath.row].id!)
         let navigationViewController = UINavigationController(rootViewController: rootViewController)
         navigationViewController.modalPresentationStyle = .fullScreen
 
