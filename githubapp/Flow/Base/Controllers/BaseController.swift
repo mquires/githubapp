@@ -40,6 +40,6 @@ class BaseController: UIViewController {
     
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.textColor = Resources.Colors.black
-        titleLabel.font = Resources.Fonts.bold
+        titleLabel.font = Resources.Fonts.title
     }
 }

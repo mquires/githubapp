@@ -14,6 +14,7 @@ enum Resources {
     }
     
     enum Fonts {
-        static var bold = UIFont.systemFont(ofSize: 32, weight: .bold)
+        static var title = UIFont.systemFont(ofSize: 32, weight: .bold)
+        static var subtitle = UIFont.systemFont(ofSize: 19, weight: .bold)
     }
 }
