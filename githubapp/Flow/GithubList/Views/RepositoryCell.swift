@@ -59,15 +59,19 @@ class RepositoryCell: UITableViewCell {
     }
     
     func setupCellData(repository: Repository) {
-        let data = try? Data(contentsOf: URL(string: (repository.owner?.avatarURL)!)!)
-        
-        if let imageData = data {
-            avatar.image = UIImage(data: imageData)
-        } else {
-            avatar.image = UIImage(named: "SomeEmptyImage")
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            let data = try? Data(contentsOf: URL(string: (repository.owner?.avatarURL)!)!)
+            
+            DispatchQueue.main.async {
+                if let imageData = data {
+                    self?.avatar.image = UIImage(data: imageData)
+                } else {
+                    self?.avatar.image = UIImage(named: "SomeEmptyImage")
+                }
+                
+                self?.nameLabel.text = repository.name
+                self?.repositoryDescriptionLabel.text = repository.repositoryDescription
+            }
         }
-        
-        nameLabel.text = repository.name
-        repositoryDescriptionLabel.text = repository.repositoryDescription
     }
 }

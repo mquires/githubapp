@@ -9,6 +9,7 @@ import Foundation
 
 enum ApiType {
     case getRepositories
+    case getRepositoryDetails(id: String)
     
     var baseURL: String {
         return "https://api.github.com/"
@@ -18,6 +19,8 @@ enum ApiType {
         switch self {
         case .getRepositories:
             return "repositories"
+        case .getRepositoryDetails(let id):
+            return "repositories/\(id)"
         }
     }
     
@@ -27,6 +30,10 @@ enum ApiType {
         
         switch self {
         case .getRepositories:
+            request.httpMethod = "GET"
+            
+            return request
+        case .getRepositoryDetails:
             request.httpMethod = "GET"
             
             return request
@@ -56,6 +63,28 @@ class ApiManager {
             }
         }
         
+        task.resume()
+    }
+
+    func getRepositoryDetails(id: String, completion: @escaping ((Result<RepositoryDetails, Error>) -> Void)) {
+        let request = ApiType.getRepositoryDetails(id: id).request
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let status = response as? HTTPURLResponse {
+                print("status code: \(status.statusCode)")
+            }
+
+            if let data = data {
+                do {
+                    let repositoryDetails = try JSONDecoder().decode(RepositoryDetails.self, from: data)
+
+                    completion(.success(repositoryDetails))
+                } catch {
+                    print(error.localizedDescription)
+                    completion(.failure(error))
+                }
+            }
+        }
+
         task.resume()
     }
 }

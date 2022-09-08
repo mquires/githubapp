@@ -21,7 +21,7 @@ class GithubListController: BaseController {
             switch result {
             case .success(let repositories):
                 DispatchQueue.main.async {
-                    self.repositoriesList = repositories as [Repository]
+                    self.repositoriesList = repositories
                     self.tableView.reloadData()
                 }
             case .failure(let error):
@@ -64,7 +64,7 @@ extension GithubListController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath) as? RepositoryCell else {
-            fatalError()
+            return UITableViewCell()
         }
         
         cell.setupCellData(repository: repositoriesList[indexPath.row])
