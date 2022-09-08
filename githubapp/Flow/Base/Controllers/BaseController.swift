@@ -42,4 +42,14 @@ class BaseController: UIViewController {
         titleLabel.textColor = Resources.Colors.black
         titleLabel.font = Resources.Fonts.title
     }
+    
+    func showAlertErrorMessage(with errorMessage: String) {
+        let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true)
+    }
 }

@@ -41,50 +41,84 @@ enum ApiType {
     }
 }
 
+enum NetworkingError: String, Error {
+    case invalidRequest = "You've made a bad request!"
+    case BadRequest = "Bad Request"
+    case Unauthorized = "Unauthorized"
+    case Forbidden = "Forbidden"
+    case notFound = "Not found"
+    case InternalServerError = "Internal Server Error"
+}
+
+enum HTTPStatusCodes: Int {
+    case OK = 200
+    case BadRequest = 400
+    case Unauthorized = 401
+    case Forbidden = 403
+    case NotFound = 404
+    case InternalServerError = 500
+}
+
 class ApiManager {
     static let shared = ApiManager()
     
-    func getRepositories(completion: @escaping ((Result<[Repository], Error>) -> Void)) {
+    func getRepositories(completion: @escaping ((Result<[Repository], NetworkingError>) -> Void)) {
         let request = ApiType.getRepositories.request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let status = response as? HTTPURLResponse {
-                print("status code: \(status.statusCode)")
-            }
-            
-            if let data = data {
-                do {
-                    let repositories = try JSONDecoder().decode([Repository].self, from: data)
-                    
-                    completion(.success(repositories))
-                } catch {
-                    print(error.localizedDescription)
-                    completion(.failure(error))
+                switch status.statusCode {
+                case (HTTPStatusCodes.OK.rawValue):
+                    if let data = data {
+                        do {
+                            let repositories = try JSONDecoder().decode([Repository].self, from: data)
+                            
+                            completion(.success(repositories))
+                        } catch {
+                            completion(.failure(.invalidRequest))
+                        }
+                    }
+                case (HTTPStatusCodes.BadRequest.rawValue): return completion(.failure(.BadRequest))
+                case (HTTPStatusCodes.Unauthorized.rawValue): return completion(.failure(.Unauthorized))
+                case (HTTPStatusCodes.Forbidden.rawValue): return completion(.failure(.Forbidden))
+                case (HTTPStatusCodes.NotFound.rawValue): return completion(.failure(.notFound))
+                default: return completion(.failure(.InternalServerError))
                 }
             }
         }
         
         task.resume()
     }
-
-    func getRepositoryDetails(id: Int, completion: @escaping ((Result<RepositoryDetails, Error>) -> Void)) {
+    
+    func getRepositoryDetails(id: Int, completion: @escaping ((Result<RepositoryDetails, NetworkingError>) -> Void)) {
         let request = ApiType.getRepositoryDetails(id: id).request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let status = response as? HTTPURLResponse {
-                print("status code: \(status.statusCode)")
-            }
-
-            if let data = data {
-                do {
-                    let repositoryDetails = try JSONDecoder().decode(RepositoryDetails.self, from: data)
-
-                    completion(.success(repositoryDetails))
-                } catch {
-                    print(error.localizedDescription)
-                    completion(.failure(error))
+                switch status.statusCode {
+                case (HTTPStatusCodes.OK.rawValue):
+                    if let data = data {
+                        do {
+                            let repositoryDetails = try JSONDecoder().decode(RepositoryDetails.self, from: data)
+                            
+                            completion(.success(repositoryDetails))
+                        } catch {
+                            completion(.failure(.invalidRequest))
+                        }
+                    }
+                case (HTTPStatusCodes.BadRequest.rawValue): return completion(.failure(.BadRequest))
+                case (HTTPStatusCodes.Unauthorized.rawValue): return completion(.failure(.Unauthorized))
+                case (HTTPStatusCodes.Forbidden.rawValue): return completion(.failure(.Forbidden))
+                case (HTTPStatusCodes.NotFound.rawValue): return completion(.failure(.notFound))
+                default: return completion(.failure(.InternalServerError))
                 }
             }
         }
-
+        
         task.resume()
+    }
+}
+
+extension NetworkingError: LocalizedError {
+    var descriptionError: String? {
+        return NSLocalizedString(rawValue, comment: "")
     }
 }

@@ -25,7 +25,9 @@ class GithubListController: BaseController {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    self.showAlertErrorMessage(with: error.rawValue)
+                }
             }
         }
         
