@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1925F12428C8B4A70036D335 /* RepositoriesListStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1925F12328C8B4A70036D335 /* RepositoriesListStateController.swift */; };
 		1925F12828C8C15D0036D335 /* RepositoryDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1925F12728C8C15D0036D335 /* RepositoryDetailsController.swift */; };
 		1925F12B28C8DFB40036D335 /* RepositoryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1925F12A28C8DFB40036D335 /* RepositoryDetails.swift */; };
 		1925F12E28C8E6FA0036D335 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1925F12D28C8E6FA0036D335 /* Owner.swift */; };
@@ -25,7 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1925F12328C8B4A70036D335 /* RepositoriesListStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListStateController.swift; sourceTree = "<group>"; };
 		1925F12728C8C15D0036D335 /* RepositoryDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsController.swift; sourceTree = "<group>"; };
 		1925F12A28C8DFB40036D335 /* RepositoryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetails.swift; sourceTree = "<group>"; };
 		1925F12D28C8E6FA0036D335 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				19D3A2EE28C7417C001E0F77 /* GithubListController.swift */,
-				1925F12328C8B4A70036D335 /* RepositoriesListStateController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -304,7 +301,6 @@
 				192CF9EB28C7A6D90080349B /* RepositoryCell.swift in Sources */,
 				1925F12828C8C15D0036D335 /* RepositoryDetailsController.swift in Sources */,
 				19D3A2EF28C7417C001E0F77 /* GithubListController.swift in Sources */,
-				1925F12428C8B4A70036D335 /* RepositoriesListStateController.swift in Sources */,
 				19D3A2DB28C73ECB001E0F77 /* BaseController.swift in Sources */,
 				19D3A2D728C73ECB001E0F77 /* AppDelegate.swift in Sources */,
 				192CF9DD28C7521A0080349B /* ApiManager.swift in Sources */,
